@@ -1,0 +1,38 @@
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$navbar-default-color:                     whitesmoke;
+$navbar-default-bg:                        rgb(197, 47, 36);
+
+// Navbar links
+$navbar-default-link-color:                $navbar-default-color;
+$navbar-default-link-hover-color:          darken($navbar-default-color, 100% - percentage(819/1911));
+$navbar-default-link-active-color:         darken($navbar-default-color, 100% - percentage(1365/1911));
+$navbar-default-link-disabled-color:       lighten($navbar-default-color, percentage(3276/1911) - 100%);
+
+// Navbar toggle
+$navbar-default-toggle-hover-bg:           darken($navbar-default-bg, 100% - percentage(14540253/16316664));
+$navbar-default-toggle-icon-bar-bg:        darken($navbar-default-bg, 100% - percentage(8947848/16316664));
+$navbar-default-toggle-border-color:       lighten($navbar-default-color, percentage(3549/1911) - 100%);
+
+
+// Inverted navbar
+// Reset inverted navbar basics
+$navbar-inverse-color:                      whitesmoke;
+$navbar-inverse-bg:                         darken($navbar-default-bg, 100% - percentage(2236962/16316664));
+
+// Inverted navbar links
+$navbar-inverse-link-color:                 whitesmoke;
+$navbar-inverse-link-hover-color:         white;//capped to white...
+$navbar-inverse-link-disabled-color:        darken($navbar-default-color, 100% - percentage(1092/1911));
+
+// Inverted navbar brand label
+$navbar-inverse-brand-hover-color:          $navbar-inverse-link-hover-color;
+
+// Inverted navbar toggle
+$navbar-inverse-toggle-hover-bg:            darken($navbar-default-bg, 100% - percentage(3355443/16316664));
+$navbar-inverse-toggle-icon-bar-bg:         lighten($navbar-default-color, percentage(16777215/16316664) - 100%);
+$navbar-inverse-toggle-border-color:        $navbar-default-link-hover-color;
+
+
+@import "bootstrap"
+//$import "bootstrap-sprockets"

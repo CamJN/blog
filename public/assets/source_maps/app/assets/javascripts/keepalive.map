@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "",
+  "sourceRoot": "",
+  "sources": [
+    "/assets/source_maps/app/assets/javascripts/keepalive.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;AAAA,EAAA,WAAA,CAAY,SAAA,GAAA;WACV,CAAC,CAAC,GAAF,CAAM,QAAQ,CAAC,GAAf,EADU;EAAA,CAAZ,EAGE,IAAA,GAAO,EAAP,GAAY,CAAC,EAAA,GAAK,CAAN,CAHd,CAAA,CAAA;AAAA"
+}
