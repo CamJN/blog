@@ -22,7 +22,7 @@ gem 'autoprefixer-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 2.5.1', group: :production
 
-# Use CoffeeScript for .js.coffee assets and views
+# Use CoffeeScript for .js.coffee assets and views, (required for Turbolinks)
 gem 'coffee-rails', '~> 4.0.1'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -43,7 +43,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 group :development do
 	# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 	gem 'spring'
-	gem 'coffee-rails-source-maps'
+	#gem 'coffee-rails-source-maps' do not write this stuff, CoffeeScript support only remains for Turbolinks
 	#gem 'sass-rails-source-maps'
 	# Use Capistrano for deployment
 	# gem 'capistrano-rails'
