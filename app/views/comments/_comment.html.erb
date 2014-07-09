@@ -1,18 +1,17 @@
-<p>
+<div class="panel panel-default">
+	<div class="panel-heading">
     <strong>Commenter:</strong>
     <%= comment.commenter %>
-</p>
-
-<p>
-    <strong>Comment:</strong>
+  </div>
+  <div class="panel-body">
     <%= comment.body %>
-</p>
-
-<p>
-  <% if user_signed_in? %>
-    <%= link_to 'Delete Comment',
+    <p>
+      <% if user_signed_in? %>
+      <%= link_to 'Delete Comment',
                [comment.article, comment],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
-  <% end %>
-</p>
+      <% end %>
+    </p>
+  </div>
+</div>
