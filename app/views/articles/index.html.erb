@@ -37,7 +37,9 @@
     </tbody>
   </table>
   <% if user_signed_in? %>
+<footer>
   <%= link_to 'New article', new_article_path, class: 'btn btn-success', id: 'new-article-btn' %>
+</footer>
   <% end %>
 </section>
 <aside class="col-md-4">

@@ -14,8 +14,8 @@
  *= require_self
  */
 
-body { padding-top: 100px; }
-footer { margin-top: 100px; bottom:0; position:fixed;}
+body { padding-top: 70px; }
+footer.page-footer { margin-top: 100px; bottom:0; position:fixed;}
 .navbar-brand:before {
     content: "B";
     font-family: "Before The Rain";
