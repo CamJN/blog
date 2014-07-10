@@ -3,9 +3,9 @@
 one:
   commenter: MyString
   body: MyText
-  article_id: 
+  article:  good
 
 two:
   commenter: MyString
   body: MyText
-  article_id: 
+  article: good
