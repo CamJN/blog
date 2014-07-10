@@ -10,6 +10,8 @@ gem 'pg'
 
 # Use devise as the authentication method
 gem 'devise'
+# Use cancancan for authorization (cancan is dead)
+gem 'cancancan', '~> 1.8'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
