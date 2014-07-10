@@ -1,5 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 good:
-  title: MyTitleTwo
-  text: MyTextTwo
+  title: My Title One
+  text: My Text One

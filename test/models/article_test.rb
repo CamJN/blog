@@ -41,6 +41,7 @@ class ArticleTest < ActiveSupport::TestCase
     duptitle = Article.new
     duptitle.text = 'acceptable'
     duptitle.title = articles(:good).title
+    assert_equal duptitle.title, articles(:good).title, "Test incorrect, titles not equal"
     assert_not duptitle.save, "Saved article with a duplicate title"
   end
 
