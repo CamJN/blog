@@ -1,7 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+reg:
+  name: registered
 
-two:
-  name: MyString
+ban:
+  name: banned
+
+mod:
+  name: moderator
+
+adm:
+  name: admin
+
+gst:
+  name: guest

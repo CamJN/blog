@@ -3,9 +3,9 @@
 one:
   body: My text needs to be fifteen chars long.
   article:  good
-  user: two
+  user: bob
 
 two:
   body: My second text needs to be just as long.
   article: good
-  user: two
+  user: bob

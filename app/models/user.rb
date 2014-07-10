@@ -5,21 +5,20 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :confirmable, :lockable, :timeoutable,
          :recoverable, :trackable, :validatable
-  #  attr_accessor :login # getter/setters are below
   belongs_to :role
   before_create :set_default_role
   has_many :comments, dependent: :destroy
 
-  validates :email, presence: true, confirmation: true, :uniqueness => { :case_sensitive => false  }, :format => { with: /\A[^@]+@[^@\.]+\.[^@]+\z/ }
-  validates :username, presence: true, uniqueness:true
-
-  def login=(login)
-    @login = login
-  end
+  attr_writer :login
 
   def login
     @login || self.username || self.email
   end
+
+  validates :email, presence: true, confirmation: true, :uniqueness => { :case_sensitive => false  },
+                    length: {minimum: 3, maximum: 255}, :format => { with: /\A[^@]+@[^@\.]+\.[^@]+\z/ }
+  validates :username, presence: true, uniqueness: true, :length => {minimum: 1, maximum: 255}
+  validates_format_of :password, allow_nil: true, with: /\A(?=.*[[:lower:]])(?=.*[[:upper:]])(?=.*[[:digit:]])(?=.*[^[:alnum:][:space:]]).*\z/, message: 'must contain an uppercase, lowercase, digit, and symbol'
 
   def self.find_first_by_auth_conditions(warden_conditions)
       conditions = warden_conditions.dup
