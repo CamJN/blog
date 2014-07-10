@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   #  attr_accessor :login # getter/setters are below
   belongs_to :role
   before_create :set_default_role
+  has_many :comments, dependent: :destroy
 
   validates :email, presence: true, confirmation: true, :uniqueness => { :case_sensitive => false  }, :format => { with: /\A[^@]+@[^@\.]+\.[^@]+\z/ }
   validates :username, presence: true, uniqueness:true

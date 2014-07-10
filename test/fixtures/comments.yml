@@ -4,8 +4,10 @@ one:
   commenter: MyString
   body: MyText
   article:  good
+  user: two
 
 two:
   commenter: MyString
-  body: MyText
+  body: MyTextTwo
   article: good
+  user: two
