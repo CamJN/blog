@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   end
 
   validates :email, presence: true, confirmation: true, :uniqueness => { :case_sensitive => false  },
-                    length: {minimum: 3, maximum: 255}, :format => { with: /\A[^@]+@[^@\.]+\.[^@]+\z/ }
+                    length: {minimum: 3, maximum: 255}, :format => { with: /\A[^@]+@[^@]+\z/ }
   validates :username, presence: true, uniqueness: true, :length => {minimum: 1, maximum: 255}
   validates_format_of :password, allow_nil: true, with: /\A(?=.*[[:lower:]])(?=.*[[:upper:]])(?=.*[[:digit:]])(?=.*[^[:alnum:][:space:]]).*\z/, message: 'must contain an uppercase, lowercase, digit, and symbol'
 
