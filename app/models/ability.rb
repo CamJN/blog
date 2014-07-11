@@ -6,7 +6,7 @@ class Ability
     #
     user ||= User.new # guest user (not logged in)
     if !user.role_id?
-      user.role = Role.find_by({name: guest})
+      user.role = Role.find_by({name: 'guest'})
     end
 
     case user.role
