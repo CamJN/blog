@@ -2,7 +2,7 @@
 
 one:
   email: one@domain.tld
-  username: 'one'
+  username: reggie
   role: reg
 
 bob:

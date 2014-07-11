@@ -5,7 +5,17 @@ one:
   article:  good
   user: bob
 
-two:
-  body: My second text needs to be just as long.
+three:
+  body: My third comment needs to be fifteen chars long.
+  article:  good
+  user: ted
+
+four:
+  body: My fourth comment needs to be just as long.
   article: good
-  user: bob
+  user: one
+
+five:
+  body: My last comment needs to be just as long.
+  article: good
+  user: bad
