@@ -6,7 +6,7 @@
   <div class="panel-body">
     <%= comment.body %>
     <p>
-      <% if user_signed_in? %>
+      <% if can? :destroy, @comment %>
       <%= link_to 'Delete Comment',
                [comment.article, comment],
                method: :delete,
