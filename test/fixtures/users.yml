@@ -4,18 +4,22 @@ one:
   email: one@domain.tld
   username: reggie
   role: reg
+  confirmed_at: <%= Time.now %>
 
 bob:
   email: email@domain.tld
   username: bob
   role: mod
+  confirmed_at: <%= Time.now %>
 
 ted:
   email: ted@talk.tld
   username: ted
   role: adm
+  confirmed_at: <%= Time.now %>
 
 bad:
   email: bad@bones.com
   username: bad
   role: ban
+  confirmed_at: <%= Time.now %>

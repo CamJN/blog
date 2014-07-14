@@ -3,3 +3,7 @@
 good:
   title: My Title One
   text: My Text One
+
+alsogood:
+  title: this is a valid title
+  text: some awesome text
