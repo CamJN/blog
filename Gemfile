@@ -3,7 +3,7 @@ source 'http://gems.rubyforge.org'
 source 'http://gems.github.com'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.4'
+gem 'rails', '>= 4.1.4'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -11,10 +11,10 @@ gem 'pg'
 # Use devise as the authentication method
 gem 'devise'
 # Use cancancan for authorization (cancan is dead)
-gem 'cancancan', '~> 1.8'
+gem 'cancancan', '>= 1.8'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '>= 4.0.3'
 
 #use Bootstrap for pretty
 gem 'bootstrap-sass'
@@ -25,7 +25,7 @@ gem 'autoprefixer-rails'
 gem 'uglifier', '>= 2.5.1', group: :production
 
 # Use CoffeeScript for .js.coffee assets and views, (required for Turbolinks)
-gem 'coffee-rails', '~> 4.0.1'
+gem 'coffee-rails', '>= 4.0.1'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
@@ -37,10 +37,10 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.1.1'
+gem 'jbuilder', '>= 2.1.2'
 
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'sdoc', '>= 0.4.0',          group: :doc
 
 gem 'possessive'
 
@@ -54,7 +54,7 @@ group :development do
 end
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '>= 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'

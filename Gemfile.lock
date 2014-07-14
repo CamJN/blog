@@ -42,10 +42,10 @@ GEM
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
-    coffee-script (2.2.0)
+    coffee-script (2.3.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.7.0)
+    coffee-script-source (1.7.1)
     devise (3.2.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -134,19 +134,19 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
-  bcrypt (~> 3.1.7)
+  bcrypt (>= 3.1.7)
   bootstrap-sass
   bootstrap-sass-extras
-  cancancan (~> 1.8)
-  coffee-rails (~> 4.0.1)
+  cancancan (>= 1.8)
+  coffee-rails (>= 4.0.1)
   devise
-  jbuilder (~> 2.1.1)
+  jbuilder (>= 2.1.2)
   jquery-rails
   pg
   possessive
-  rails (= 4.1.4)
-  sass-rails (~> 4.0.3)
-  sdoc (~> 0.4.0)
+  rails (>= 4.1.4)
+  sass-rails (>= 4.0.3)
+  sdoc (>= 0.4.0)
   spring
   turbolinks
   uglifier (>= 2.5.1)
