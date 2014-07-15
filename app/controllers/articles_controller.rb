@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
     if can? :create, Article
       @article = Article.new
     else
-      home
+      abandon
     end
   end
 
@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
     if can? :read, Article
       grab
       if cannot? :read, @article
-        home
+        abandon
       end
     end
   end
@@ -30,10 +30,10 @@ class ArticlesController < ApplicationController
     if can? :update, Article
       grab
       if cannot? :update, @article
-        home
+        abandon
       end
     else
-      home
+      abandon
     end
   end
 
@@ -43,21 +43,22 @@ class ArticlesController < ApplicationController
       if can? :destroy, @article
         @article.destroy
       end
+      home
+    else
+      abandon
     end
-    home
   end
 
   def create
     if can? :create, Article
       @article = Article.new(article_params)
-
       if @article.save
         redirect_to @article
       else
         render 'new'
       end
     else
-      home
+      abandon
     end
   end
 
@@ -71,10 +72,10 @@ class ArticlesController < ApplicationController
           render 'edit'
         end
       else
-        home
+        abandon
       end
     else
-      home
+      abaondon
     end
   end
 
@@ -87,5 +88,9 @@ class ArticlesController < ApplicationController
   end
   def home
     redirect_to articles_path
+  end
+  def abandon
+    flash[:alert] = 'You don\'t have permission to do that.'
+    home
   end
 end
