@@ -77,13 +77,27 @@ class CommentsControllerTest < ActionController::TestCase
     assert_redirected_to article_path(articles(:good).id)
   end
 
-#   test "moderator can destroy own comments" do
-#     flunk "unimplemented"
-#   end
+  test "moderator can destroy own comments" do
+    mod = users(:bob)
+    sign_in mod
 
-#   test "moderator can destroy other's comments" do
-#     flunk "unimplemented"
-#   end
+    assert_difference('Comment.count',-1) do
+      delete :destroy, article_id: articles(:good).id, id: comments(:one).id
+    end
+
+    assert_redirected_to article_path(articles(:good).id)
+  end
+
+  test "moderator can destroy other's comments" do
+    mod = users(:bob)
+    sign_in mod
+
+    assert_difference('Comment.count',-1) do
+      delete :destroy, article_id: articles(:good).id, id: comments(:three).id
+    end
+
+    assert_redirected_to article_path(articles(:good).id)
+  end
 
 #   test "registered can destroy own comments" do
 #     flunk "unimplemented"
