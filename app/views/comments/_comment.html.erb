@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div class="panel panel-<%= comment_panel_styling(comment) %>">
 	<div class="panel-heading">
     <strong>Commenter:</strong>
     <%= comment.user.login %>
@@ -6,7 +6,7 @@
   <div class="panel-body">
     <%= comment.body %>
     <p>
-      <% if can? :destroy, @comment %>
+      <% if can? :destroy, comment %>
       <%= link_to 'Delete Comment',
                [comment.article, comment],
                method: :delete,
