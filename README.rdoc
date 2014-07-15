@@ -1,28 +1,17 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Things you may want to know:
 
-Things you may want to cover:
+* Ruby version: 2.1.1
 
-* Ruby version
+* System dependencies: js runtime
 
-* System dependencies
+* Configuration: see devise initializer and environment configurations
 
-* Configuration
+* Database creation: rake db:create
 
-* Database creation
+* Database initialization: rake db:migrate; rake db:seed
 
-* Database initialization
+* How to run the test suite: rake test
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Please feel free to comment/fork/send pull requests.
