@@ -5,6 +5,9 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     params['comment']['user_id'] = current_user.id
     @comment = @article.comments.create(comment_params)
+    if @comment.id.nil?
+      flash[:alert] = 'Comment '+ @comment.errors.messages[:body].first
+    end
     redirect_to article_path(@article)
   end
 
