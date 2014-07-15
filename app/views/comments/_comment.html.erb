@@ -1,5 +1,5 @@
 <div class="panel panel-<%= comment_panel_styling(comment) %>">
-	<div class="panel-heading">
+  <div class="panel-heading">
     <strong>Commenter:</strong>
     <%= comment.user.login %>
   </div>
@@ -7,10 +7,10 @@
     <%= comment.body %>
     <p>
       <% if can? :destroy, comment %>
-      <%= link_to 'Delete Comment',
-               [comment.article, comment],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Delete Comment',
+        [comment.article, comment],
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>
       <% end %>
     </p>
   </div>
