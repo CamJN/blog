@@ -7,6 +7,13 @@ class ArticleTest < ActiveSupport::TestCase
     assert_not notitle.valid?, "validated the article without a title"
   end
 
+  test "article without title should set error when validated" do
+    notitle = Article.new
+    notitle.text = 'acceptable'
+    notitle.valid?
+    assert_includes notitle.errors.messages[:title], "can't be blank"
+  end
+
   test "article should not be valid with too short of a title" do
     notitle = Article.new
     notitle.text = 'acceptable'
@@ -14,11 +21,27 @@ class ArticleTest < ActiveSupport::TestCase
     assert_not notitle.valid?, "validated the article with a short title"
   end
 
+  test "article with short title should set error when validated" do
+    notitle = Article.new
+    notitle.text = 'acceptable'
+    notitle.title = 'shrt'
+    notitle.valid?
+    assert_includes notitle.errors.messages[:title], "is too short (minimum is 5 characters)"
+  end
+
   test "article should not be valid with too long of a title" do
     notitle = Article.new
     notitle.text = 'acceptable'
     notitle.title = 't'*260
     assert_not notitle.valid?, "validated the article with a long title"
+  end
+
+  test "article with long title should set error when validated" do
+    notitle = Article.new
+    notitle.text = 'acceptable'
+    notitle.title = 't'*260
+    notitle.valid?
+    assert_includes notitle.errors.messages[:title], "is too long (maximum is 255 characters)"
   end
 
   test "article's title setter should title-case the title" do
@@ -31,7 +54,7 @@ class ArticleTest < ActiveSupport::TestCase
     good = Article.new
     good.title = 'acceptable'
     good.text = 'acceptable'
-    assert good.valid?, "Didn't valid the article with a valid title"
+    assert good.valid?, "Didn't validate the article with a valid title"
   end
 
   test "article with duplicate title should not be valid" do
@@ -41,10 +64,25 @@ class ArticleTest < ActiveSupport::TestCase
     assert_not duptitle.valid?, "validated article with a duplicate title"
   end
 
+  test "article with duplicate title should set error when validated" do
+    duptitle = Article.new
+    duptitle.text = 'acceptable'
+    duptitle.title = articles(:good).title
+    duptitle.valid?
+    assert_includes duptitle.errors.messages[:title], "has already been taken"
+  end
+
   test "article should not be valid without text" do
     notext = Article.new
     notext.title = 'acceptable'
     assert_not notext.valid?, "validated the article without text"
+  end
+
+  test "article without text should set error when validated" do
+    notext = Article.new
+    notext.title = 'acceptable'
+    notext.valid?
+    assert_includes notext.errors.messages[:text], "can't be blank"
   end
 
   test "article should not be valid with degenerate string text" do
@@ -54,10 +92,18 @@ class ArticleTest < ActiveSupport::TestCase
     assert_not notext.valid?, "validated the article with degenerate string text"
   end
 
-  test "article with acceptable text should valid" do
+  test "article with short text should set error when validated" do
+    notext = Article.new
+    notext.title = 'acceptable'
+    notext.text = ''
+    notext.valid?
+    assert_includes notext.errors.messages[:text], "is too short (minimum is 1 characters)"
+  end
+
+  test "article with acceptable text should validate" do
     good = Article.new
     good.title = 'acceptable'
     good.text = 'acceptable'
-    assert good.valid?, "Didn't valid the article with valid text"
+    assert good.valid?, "Didn't validate the article with valid text"
   end
 end
