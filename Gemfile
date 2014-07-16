@@ -21,6 +21,10 @@ gem 'bootstrap-sass'
 gem 'bootstrap-sass-extras'
 gem 'autoprefixer-rails'
 
+# menu builder
+gem 'simple-navigation'
+gem 'simple-navigation-bootstrap'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 2.5.1', group: :production
 
@@ -45,12 +49,12 @@ gem 'sdoc', '>= 0.4.0',          group: :doc
 gem 'possessive'
 
 group :development do
-	# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-	gem 'spring'
-	#gem 'coffee-rails-source-maps' do not write this stuff, CoffeeScript support only remains for Turbolinks
-	#gem 'sass-rails-source-maps'
-	# Use Capistrano for deployment
-	# gem 'capistrano-rails'
+# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+gem 'spring'
+#gem 'coffee-rails-source-maps' do not write this stuff, CoffeeScript support only remains for Turbolinks
+#gem 'sass-rails-source-maps'
+# Use Capistrano for deployment
+# gem 'capistrano-rails'
 end
 
 # Use ActiveModel has_secure_password
