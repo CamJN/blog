@@ -99,19 +99,45 @@ class CommentsControllerTest < ActionController::TestCase
     assert_redirected_to article_path(articles(:good).id)
   end
 
-#   test "registered can destroy own comments" do
-#     flunk "unimplemented"
-#   end
+  test "registered can destroy own comments" do
+    reg = users(:one)
+    sign_in reg
 
-#   test "registered cannot destroy other's comments" do
-#     flunk "unimplemented"
-#   end
+    assert_difference('Comment.count',-1) do
+      delete :destroy, article_id: articles(:good).id, id: comments(:four).id
+    end
 
-#   test "guest cannot destroy comments" do
-#     flunk "unimplemented"
-#   end
+    assert_redirected_to article_path(articles(:good).id)
+  end
 
-#   test "banned cannot destroy comments" do
-#     flunk "unimplemented"
-#   end
+  test "registered cannot destroy other's comments" do
+    reg = users(:one)
+    sign_in reg
+
+    assert_no_difference('Comment.count') do
+      delete :destroy, article_id: articles(:good).id, id: comments(:one).id
+    end
+
+    assert_redirected_to article_path(articles(:good).id)
+  end
+
+  test "guest cannot destroy comments" do
+    assert_no_difference('Comment.count') do
+      delete :destroy, article_id: articles(:good).id, id: comments(:one).id
+    end
+
+    assert_redirected_to new_user_session_path
+    assert_equal "You need to sign in or sign up before continuing.", flash[:alert]
+  end
+
+  test "banned cannot destroy comments" do
+    ban = users(:bad)
+    sign_in ban
+
+    assert_no_difference('Comment.count') do
+      delete :destroy, article_id: articles(:good).id, id: comments(:five).id
+    end
+
+    assert_redirected_to article_path(articles(:good).id)
+  end
 end

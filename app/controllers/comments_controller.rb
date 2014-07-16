@@ -25,7 +25,11 @@ class CommentsController < ApplicationController
         flash[:alert] = 'You are not allowed to do that.'
       end
     end
-    redirect_to article_path(@article)
+    if request.referer.nil?
+      redirect_to article_path(@article)
+    else
+      redirect_to request.referer
+    end
   end
 
   private
