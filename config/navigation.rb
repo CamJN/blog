@@ -66,11 +66,10 @@ SimpleNavigation::Configuration.run do |navigation|
     # thus you can use all the methods and vars you have available in the views.
     # primary.item :key_3, 'Admin', url, class: 'special', if: -> { current_user.admin? }
     # primary.item :key_4, 'Account', url, unless: -> { logged_in? }
-    primary.item :key_1, 'User', '#' do |sub_nav|
-      sub_nav.item :key_1_1, 'Session', user_session_path
-      sub_nav.item :key_1_2, 'Password', user_password_path
-      sub_nav.item :key_1_3, 'Registration', user_registration_path
-      sub_nav.item :key_1_4, 'Confirmation',  user_confirmation_path
+    primary.item :articles, 'Blog', '#' do |sub_nav|
+      Article.all.each do |a|
+        sub_nav.item a.title.to_s, a.title, article_path(a)
+      end
     end
     # you can also specify html attributes to attach to this particular level
     # works for all levels of the menu
