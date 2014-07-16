@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class ArticleTest < ActiveSupport::TestCase
-
   test "article should not be valid without title" do
     notitle = Article.new
     notitle.text = 'acceptable'
@@ -18,7 +17,7 @@ class ArticleTest < ActiveSupport::TestCase
   test "article should not be valid with too long of a title" do
     notitle = Article.new
     notitle.text = 'acceptable'
-    notitle.title = 'thistitleistoolongtofitinthedatabasefieldthatholdsarticletitlesthistitleistoolongtofitinthedatabasefieldthatholdsarticletitlesthistitleistoolongtofitinthedatabasefieldthatholdsarticletitlesthistitleistoolongtofitinthedatabasefieldthatholdsarticletitlesseethat'
+    notitle.title = 't'*260
     assert_not notitle.valid?, "validated the article with a long title"
   end
 

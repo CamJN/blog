@@ -75,7 +75,7 @@ class UserTest < ActiveSupport::TestCase
     newUser = User.new
     newUser.email = 'valid@valid.valid'
     newUser.username = 'unique'
-    newUser.password = 'aB2!567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789'
+    newUser.password = 'aB2!'+'5'*255
     assert_not newUser.valid?, "User valid with too long password"
   end
 
@@ -139,7 +139,7 @@ class UserTest < ActiveSupport::TestCase
     newUser = User.new
     newUser.email = 'valid@valid.valid'
     newUser.password = 'aB2!5678'
-    newUser.username = 'usernameistoolongforthedatabasefieldthatitneedstobesavedintowhenitgetspersistedtothedatabasebyrailsactiverecordframeworkblahblahineedonehundredmorecharactersforthisnametobecometoolongtofitintothedatabasefieldthatitwouldbesavedintoifitwerepersistedtothedatabs=ase'
+    newUser.username = 'u'*260
     assert_not newUser.valid?, "User valid with too long of a username"
   end
 
@@ -181,7 +181,7 @@ class UserTest < ActiveSupport::TestCase
     newUser = User.new
     newUser.username = 'valid'
     newUser.password = 'aB2!5678'
-    newUser.email = 'emailistoolongforthedatabasefieldthatitneedstobesavedintowhenitgetspersisted@othedatabasebyrailsactiverecordframeworkblahblahineedonehundredmorecharactersforthisnametobecometoolongtofitintothedatabasefieldthatitwouldbesavedintoifitwerepersistedtothedatabsaase'
+    newUser.email = 'e@b'+'m'*255
     assert_not newUser.valid?, "User valid with too long of an email"
   end
 
