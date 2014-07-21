@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
   before_action :detect_device_format
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
+  rescue_from CanCan::AccessDenied do |exception|
+     render(:file => File.join(Rails.root, 'public/403.html'), :status => :forbidden, :layout => false)
+  end
+
   protected
 
   def configure_permitted_parameters
