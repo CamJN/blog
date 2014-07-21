@@ -11,7 +11,7 @@ gem 'pg'
 # Use devise as the authentication method
 gem 'devise'
 # Use cancancan for authorization (cancan is dead)
-gem 'cancancan', '>= 1.8'
+gem 'cancancan', '>= 1.9'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 4.0.3'
@@ -26,7 +26,7 @@ gem 'simple-navigation'
 gem 'simple-navigation-bootstrap'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 2.5.1', group: :production
+gem 'uglifier', '>= 2.5.3', group: :production
 
 # Use CoffeeScript for .js.coffee assets and views, (required for Turbolinks)
 gem 'coffee-rails', '>= 4.0.1'
