@@ -42,7 +42,7 @@
     </footer>
   <% end %>
 </section>
-<aside class="col-md-4">
+<aside class="col-md-4 comments">
   <% @articles.each do |article|
   if !article.comments.empty? %>
     <%= render article.comments %>
