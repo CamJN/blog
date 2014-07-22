@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  before_filter :set_user, only: [:create]
+  before_action :set_user, only: [:create]
   load_and_authorize_resource :nested => :article
 
   def create
