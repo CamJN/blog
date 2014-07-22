@@ -1,6 +1,6 @@
 if($('a.dropdown-toggle').text().trim() !== 'Guest'){
   setInterval(
-    function(){$.get(document.URL);},
+    function(){$.getJSON(document.location.origin+"/ping");},
     1000 * 60 * (10 - 1)
   );
 }
