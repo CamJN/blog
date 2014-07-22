@@ -1,10 +1,11 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: [:create]
-  load_and_authorize_resource :nested => :article
+  load_and_authorize_resource :article
+  load_and_authorize_resource :comment, through: :article
 
   def create
-    if @comment.id.nil?
+    if not @comment.save
       flash[:alert] = 'Comment '+ @comment.errors.messages[:body].first
     end
 
@@ -16,7 +17,7 @@ class CommentsController < ApplicationController
     if request.referer.nil?
       redirect_to article_path(@article)
     else
-      redirect_to request.referer
+      redirect_to :back
     end
   end
 
