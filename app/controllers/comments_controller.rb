@@ -1,10 +1,9 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
+  before_filter :set_user, only: [:create]
   load_and_authorize_resource :nested => :article
 
   def create
-    params['comment']['user_id'] = current_user.id
-#     @comment = @article.comments.create(comment_params)
     if @comment.id.nil?
       flash[:alert] = 'Comment '+ @comment.errors.messages[:body].first
     end
@@ -24,5 +23,8 @@ class CommentsController < ApplicationController
   private
   def comment_params
     params.require(:comment).permit(:body,:user_id)
+  end
+  def set_user
+    params['comment']['user_id'] = current_user.id
   end
 end
