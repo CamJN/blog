@@ -51,8 +51,7 @@ class CommentsControllerTest < ActionController::TestCase
       post :create, article_id: articles(:good).id, comment: {body: 'a long enough body'}
     end
 
-    assert_redirected_to article_path(articles(:good).id)
-    assert_not_equal "You need to sign in or sign up before continuing.", flash[:alert]
+    assert_response :forbidden
   end
 
   test "admin can destroy other's comments" do
@@ -118,7 +117,7 @@ class CommentsControllerTest < ActionController::TestCase
       delete :destroy, article_id: articles(:good).id, id: comments(:one).id
     end
 
-    assert_redirected_to article_path(articles(:good).id)
+    assert_response :forbidden
   end
 
   test "guest cannot destroy comments" do
@@ -138,6 +137,6 @@ class CommentsControllerTest < ActionController::TestCase
       delete :destroy, article_id: articles(:good).id, id: comments(:five).id
     end
 
-    assert_redirected_to article_path(articles(:good).id)
+    assert_response :forbidden
   end
 end

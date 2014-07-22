@@ -1,35 +1,23 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-#    load_and_authorize_resource :nested => :article
+  before_action :set_user, only: [:create]
+  load_and_authorize_resource :article
+  load_and_authorize_resource :comment, through: :article
 
   def create
-    grab_article
-    if can? :create, Comment
-      params['comment']['user_id'] = current_user.id
-      @comment = @article.comments.create(comment_params)
-      if @comment.id.nil?
-        flash[:alert] = 'Comment '+ @comment.errors.messages[:body].first
-      end
-    else
-      flash[:alert] = 'You are not allowed to do that.'
+    if not @comment.save
+      flash[:alert] = 'Comment '+ @comment.errors.messages[:body].first
     end
+
     redirect_to article_path(@article)
   end
 
   def destroy
-    grab_article
-    if can? :destroy, Comment
-    @comment = @article.comments.find(params[:id])
-      if can? :destroy, @comment
-        @comment.destroy
-      else
-        flash[:alert] = 'You are not allowed to do that.'
-      end
-    end
+    @comment.destroy
     if request.referer.nil?
       redirect_to article_path(@article)
     else
-      redirect_to request.referer
+      redirect_to :back
     end
   end
 
@@ -37,7 +25,7 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:body,:user_id)
   end
-  def grab_article
-    @article = Article.find(params[:article_id])
+  def set_user
+    params['comment']['user_id'] = current_user.id
   end
 end

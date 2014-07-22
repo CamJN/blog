@@ -22,15 +22,15 @@ class ArticlesControllerTest < ActionController::TestCase
     assert_template :show
   end
 
-  test "getting show should list specified article" do
-    Article.all.each do |a|
+  Article.all.each do |a|
+    test "getting show should display specified article "+a.title do
       get(:show, {'id' => a.id})
       assert_template :show
       assert_not_nil assigns(:article)
+      assert_select 'h1', a.title
       assert_equal a.id, assigns(:article).id
     end
   end
-
 
   test "should not display new article form when non-admin gets articles#new" do
     get :new

@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
      render(:file => File.join(Rails.root, 'public/403.html'), :status => :forbidden, :layout => false)
   end
 
+  def ping
+    filtered = request.env.select do |k,v| ['HTTP_USER_AGENT','REMOTE_ADDR'].include? k end
+    render json: filtered
+  end
+
   protected
 
   def configure_permitted_parameters
