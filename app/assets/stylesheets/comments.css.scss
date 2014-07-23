@@ -2,8 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.comments .panel-body {
+.comments{
+  .panel-body {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+  }
+  .panel-success{
+    transition: border-color 1s ease 5s;
+    .panel-heading{
+      transition: color background-color border-color 1s ease 5s;
+    }
+  }
 }
