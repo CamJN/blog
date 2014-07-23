@@ -23,5 +23,8 @@
         © Camden Narzt <%= Time.now.year %>
       </div>
     </footer>
+    <% if not signed_in? %>
+      <%= render 'layouts/overlay' %>
+    <% end %>
   </body>
 </html>
