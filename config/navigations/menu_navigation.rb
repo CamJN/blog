@@ -10,6 +10,7 @@ SimpleNavigation::Configuration.run do |navigation|
         sub_nav.item a.title.parameterize.underscore.to_sym, a.title, article_path(a)
       end
     end
+    primary.item :tour, 'Tour','#'
     primary.dom_class = "nav navbar-nav"
   end
 end
