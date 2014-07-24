@@ -1,0 +1,1 @@
+/Users/camdennarzt/Programming/js/jquery-cookie/src/jquery.cookie.js

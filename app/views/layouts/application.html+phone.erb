@@ -23,7 +23,7 @@
         © Camden Narzt <%= Time.now.year %>
       </div>
     </footer>
-    <% if not signed_in? %>
+    <% if not signed_in? and not cookies[:no_tour] %>
       <%= render 'layouts/overlay' %>
     <% end %>
   </body>
