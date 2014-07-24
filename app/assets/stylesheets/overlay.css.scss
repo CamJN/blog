@@ -6,53 +6,27 @@ div#overlay{
   height: 100%;
   background-color: rgba(255,255,255,0.95);
   z-index: 1030;
-  div.intro {
-    position: fixed;
-    left: 50%;
-    @media only screen and (min-width:730px){
-      top: 20%;
-    }
-    @media only screen and (max-width:729px){
-      top: 10%;
-    }
-    h1{
-      font-size: 5em;
-      margin-left: -57px;
-      width: 114px;
-      font-weight: 100;
-    }
+  @media only screen and (min-width:730px){
+    padding-top: 100px;
   }
-  div.launch-tour{
-    position: fixed;
-    left: 30%;
-    @media only screen and (min-width:730px){
-      top: 45%;
-    }
-    @media only screen and (max-width:729px){
-      top: 35%;
-    }
+  h1{
+    font-size: 5em;
+    font-weight: 100;
+  }
+  .col-md-6{
+    padding: 0px 25px;
     h2{
       font-weight: 100;
     }
-    button{
-      margin:7px;
+    div.launch-tour{
+      button{
+        margin:7px;
+      }
     }
-  }
-  div.cliffs-notes{
-    position: fixed;
-    @media only screen and (min-width:730px){
-      left: 55%;
-      top: 45%;
-    }
-    @media only screen and (max-width:729px){
-      left: 30%;
-      top: 55%;
-    }
-    h2{
-      font-weight: 100;
-    }
-    ul.notes{
-      max-width: 350px;
+    div.cliffs-notes{
+      ul.notes{
+        max-width: 350px;
+      }
     }
   }
 }
