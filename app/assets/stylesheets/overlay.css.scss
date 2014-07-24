@@ -1,58 +1,58 @@
 div#overlay{
-position: fixed;
-top: 0px;
-left: 0px;
-width: 100%;
-height: 100%;
-background-color: rgba(255,255,255,0.95);
-z-index: 1030;
-div.intro {
-position: fixed;
-left: 50%;
-@media only screen and (min-width:730px){
-top: 20%;
-}
-@media only screen and (max-width:729px){
-top: 10%;
-}
-h1{
-font-size: 5em;
-margin-left: -57px;
-width: 114px;
-font-weight: 100;
-}
-}
-div.launch-tour{
-position: fixed;
-left: 30%;
-@media only screen and (min-width:730px){
-top: 45%;
-}
-@media only screen and (max-width:729px){
-top: 35%;
-}
-h2{
-font-weight: 100;
-}
-button{
-margin:7px;
-}
-}
-div.cliffs-notes{
-position: fixed;
-@media only screen and (min-width:730px){
-left: 55%;
-top: 45%;
-}
-@media only screen and (max-width:729px){
-left: 30%;
-top: 55%;
-}
-h2{
-font-weight: 100;
-}
-ul.notes{
-max-width: 350px;
-}
-}
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,0.95);
+  z-index: 1030;
+  div.intro {
+    position: fixed;
+    left: 50%;
+    @media only screen and (min-width:730px){
+      top: 20%;
+    }
+    @media only screen and (max-width:729px){
+      top: 10%;
+    }
+    h1{
+      font-size: 5em;
+      margin-left: -57px;
+      width: 114px;
+      font-weight: 100;
+    }
+  }
+  div.launch-tour{
+    position: fixed;
+    left: 30%;
+    @media only screen and (min-width:730px){
+      top: 45%;
+    }
+    @media only screen and (max-width:729px){
+      top: 35%;
+    }
+    h2{
+      font-weight: 100;
+    }
+    button{
+      margin:7px;
+    }
+  }
+  div.cliffs-notes{
+    position: fixed;
+    @media only screen and (min-width:730px){
+      left: 55%;
+      top: 45%;
+    }
+    @media only screen and (max-width:729px){
+      left: 30%;
+      top: 55%;
+    }
+    h2{
+      font-weight: 100;
+    }
+    ul.notes{
+      max-width: 350px;
+    }
+  }
 }
