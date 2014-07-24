@@ -1,6 +1,4 @@
 source 'https://rubygems.org'
-source 'http://gems.rubyforge.org'
-source 'http://gems.github.com'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '>= 4.1.4'
@@ -23,7 +21,7 @@ gem 'autoprefixer-rails'
 
 # menu builder
 gem 'simple-navigation'
-gem 'simple-navigation-bootstrap'
+gem 'simple-navigation-bootstrap', :git => 'https://github.com/CamJN/simple-navigation-bootstrap.git'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 2.5.3', group: :production
