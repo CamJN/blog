@@ -8,10 +8,10 @@
     overflow: hidden;
     white-space: nowrap;
   }
-/*   .panel-success{
-    transition: border-color 1s ease 5s;
+   .panel{
+    transition: border-color 1s ease;
     .panel-heading{
-      transition: color background-color border-color 1s ease 5s;
+      transition: color 1s ease, background-color 1s ease, border-color 1s ease;
     }
-  } */
+  }
 }
