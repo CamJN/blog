@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20140714223824) do
   end
 
   add_index "comments", ["article_id"], name: "index_comments_on_article_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "roles", force: true do |t|
     t.string   "name"
