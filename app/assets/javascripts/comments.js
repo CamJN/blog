@@ -2,7 +2,7 @@
 // All this logic will automatically be available in application.js.
 
 $(document).on('ready page:change', function() {
-  var newComments = $('div.panel-success')
+  var newComments = $('.comments div.panel-success');
   if(newComments.length > 0){
     setTimeout(
       function(){
