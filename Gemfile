@@ -21,7 +21,7 @@ gem 'autoprefixer-rails'
 
 # menu builder
 gem 'simple-navigation'
-gem 'simple-navigation-bootstrap', :git => 'https://github.com/CamJN/simple-navigation-bootstrap.git'
+gem 'simple-navigation-bootstrap', git: 'https://github.com/CamJN/simple-navigation-bootstrap.git'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 2.5.3', group: :production

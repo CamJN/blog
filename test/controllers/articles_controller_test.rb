@@ -17,14 +17,14 @@ class ArticlesControllerTest < ActionController::TestCase
 
 
   test "should get show without authenticating" do
-    get(:show, {'id' => articles(:good).id})
+    get(:show, {id: articles(:good).id})
     assert_response :success
     assert_template :show
   end
 
   Article.all.each do |a|
     test "getting show should display specified article "+a.title do
-      get(:show, {'id' => a.id})
+      get(:show, {id: a.id})
       assert_template :show
       assert_not_nil assigns(:article)
       assert_select 'h1', a.title
@@ -102,7 +102,7 @@ class ArticlesControllerTest < ActionController::TestCase
 
   # get patch put | update edit
   test "should not display edit article form when non-admin gets articles#edit" do
-    get(:edit, {'id' => articles(:good).id})
+    get(:edit, {id: articles(:good).id})
     assert_response :redirect
     assert_redirected_to new_user_session_path
     assert_equal "You need to sign in or sign up before continuing.", flash[:alert]
@@ -112,7 +112,7 @@ class ArticlesControllerTest < ActionController::TestCase
     admin = users(:ted)
     sign_in admin
 
-    get(:edit, {'id' => articles(:good).id})
+    get(:edit, {id: articles(:good).id})
     assert_response :success
     assert_template :edit
     assert_template layout: 'layouts/application', partial: '_form'
@@ -122,7 +122,7 @@ class ArticlesControllerTest < ActionController::TestCase
     admin = users(:ted)
     sign_in admin
 
-    get(:edit, {'id' => articles(:good).id})
+    get(:edit, {id: articles(:good).id})
     assert_equal articles(:good).id, assigns(:article).id
   end
 
@@ -132,7 +132,7 @@ class ArticlesControllerTest < ActionController::TestCase
 
     a = articles(:good)
 
-    put :update, :id => a.id, article: {title: 'Some title', text: 'a body'}
+    put :update, id: a.id, article: {title: 'Some title', text: 'a body'}
     assert_redirected_to article_path(assigns(:article))
 
     assert_equal 'Some title'.titlecase, Article.find(a.id).title
@@ -145,7 +145,7 @@ class ArticlesControllerTest < ActionController::TestCase
 
     a = articles(:good)
 
-    put :update, :id => a.id, article: {title: 'Some title', text: ''}
+    put :update, id: a.id, article: {title: 'Some title', text: ''}
 
     assert_not_equal 'Some title'.titlecase, Article.find(a.id).title
     assert_not_equal '', Article.find(a.id).text
@@ -155,7 +155,7 @@ class ArticlesControllerTest < ActionController::TestCase
     admin = users(:ted)
     sign_in admin
 
-    put :update, :id => articles(:good).id, article: {title: 'Some title', text: ''}
+    put :update, id: articles(:good).id, article: {title: 'Some title', text: ''}
 
     assert_template :edit
     assert_not_nil assigns(:article).errors[:title]
@@ -164,7 +164,7 @@ class ArticlesControllerTest < ActionController::TestCase
   test "should not update article when non admin puts to articles#update" do
     a = articles(:good)
 
-    put :update, :id => a.id, article: {title: 'Some title', text: 'a body'}
+    put :update, id: a.id, article: {title: 'Some title', text: 'a body'}
 
     assert_not_equal 'Some title'.titlecase, Article.find(a.id).title
     assert_not_equal 'a body', Article.find(a.id).text

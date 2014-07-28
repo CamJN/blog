@@ -13,7 +13,7 @@ class Ability
     when 'registered'
       can :read, [Article, Comment]
       can :create, Comment
-      can [:destroy, :update], Comment, :user => { :id => user.id}
+      can [:destroy, :update], Comment, user: { id: user.id}
     when 'banned'
       cannot :manage, :all
     when 'moderator'

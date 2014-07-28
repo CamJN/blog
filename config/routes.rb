@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   root 'articles#index'
 
   # Example of regular route:
+  # You cannnot use "get ping: 'application#ping'" here, it won't work
   get 'ping' => 'application#ping'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
