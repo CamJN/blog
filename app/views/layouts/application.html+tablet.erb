@@ -6,8 +6,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 
-    <%= favicon_link_tag 'favicon-touch.png', type: "image/png", rel: 'apple-touch-icon' %>
+    <%= favicon_link_tag 'favicon-android.png', sizes: "196x196", rel: 'icon' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
   </head>
   <body>
     <%= render 'layouts/nav' %>
