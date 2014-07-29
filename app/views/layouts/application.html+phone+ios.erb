@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : "Blog" %></title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+    <%= favicon_link_tag 'favicon-touch.png', type: "image/png", rel: 'apple-touch-icon' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  </head>
+  <body>
+    <%= render 'layouts/nav' %>
+
+    <div class="container-fluid">
+
+      <%= bootstrap_flash %>
+
+      <%= yield %>
+    </div>
+    <footer class="page-footer">
+      <div class="container">
+        © Camden Narzt <%= Time.now.year %>
+      </div>
+    </footer>
+    <% if not signed_in? and not cookies[:no_tour] %>
+      <%= render 'layouts/overlay' %>
+    <% end %>
+  </body>
+</html>
