@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ArticlesControllerTest < ActionController::TestCase
 
-  test "should get index without authenticating" do
+  test "should allow get index action without authenticating" do
     get :index
     assert_response :success
     assert_template :index
@@ -15,7 +15,6 @@ class ArticlesControllerTest < ActionController::TestCase
     assert_equal Article.all.length, assigns(:articles).length
   end
 
-
   test "should get show without authenticating" do
     get(:show, {id: articles(:good).id})
     assert_response :success
@@ -27,10 +26,10 @@ class ArticlesControllerTest < ActionController::TestCase
       get(:show, {id: a.id})
       assert_template :show
       assert_not_nil assigns(:article)
-      assert_select 'h1', a.title
       assert_equal a.id, assigns(:article).id
     end
   end
+
 
   test "should not display new article form when non-admin gets articles#new" do
     get :new
