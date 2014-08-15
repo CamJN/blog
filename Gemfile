@@ -7,7 +7,7 @@ gem 'rails', '>= 4.1.4'
 gem 'pg'
 
 # Use devise as the authentication method
-gem 'devise'
+gem 'devise', '>= 3.3'
 # Use cancancan for authorization (cancan is dead)
 gem 'cancancan', '>= 1.9'
 
