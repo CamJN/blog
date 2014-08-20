@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>= 4.1.4'
+gem 'rails', '>= 4.1.5'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -9,7 +9,7 @@ gem 'pg'
 # Use devise as the authentication method
 gem 'devise', '>= 3.3'
 # Use cancancan for authorization (cancan is dead)
-gem 'cancancan', '>= 1.9'
+gem 'cancancan', '>= 1.9.2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 4.0.3'
@@ -39,10 +39,10 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '>= 2.1.2'
+gem 'jbuilder', '>= 2.1.3'
 
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '>= 0.4.0',          group: :doc
+gem 'sdoc', '>= 0.4.1',          group: :doc
 
 gem 'possessive'
 
