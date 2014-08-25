@@ -36,7 +36,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
-    autoprefixer-rails (2.2.0.20140804)
+    autoprefixer-rails (3.0.0.20140821)
       execjs
     bcrypt (3.1.7)
     bootstrap-sass (3.2.0.1)
@@ -127,7 +127,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (2.2.3)
+    turbolinks (2.3.0)
       coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
