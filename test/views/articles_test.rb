@@ -22,4 +22,21 @@ class ArticlesViewTest < ActionController::TestCase
     end
   end
 
+  test "admin getting new should provide form for entering an article" do
+    admin = users(:ted)
+    sign_in admin
+
+    get :new
+    assert_template :new
+    assert_template partial: '_form'
+    assert_select 'input'
+  end
+
+  test "non-admin getting new should not provide form for entering an article" do
+    get :new
+    assert_template nil
+    assert_template partial: false
+    assert_select 'input', false
+  end
+
 end
