@@ -20,6 +20,23 @@ class ArticlesViewTest < ActionController::TestCase
       assert_template :show
       assert_select 'h1', a.title
     end
+
+    test "admin getting edit should provide form for editing specified article "+a.title do
+      admin = users(:ted)
+      sign_in admin
+
+      get(:edit, {id: a.id})
+      assert_template :edit
+      assert_template partial: '_form'
+      assert_select 'input'
+    end
+
+    test "non-admin getting edit should not provide form for editing specified article "+a.title do
+      get(:edit, {id: a.id})
+      assert_template nil
+      assert_template partial: false
+      assert_select 'input', false
+    end
   end
 
   test "admin getting new should provide form for entering an article" do
