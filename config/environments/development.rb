@@ -18,7 +18,7 @@ Rails.application.configure do
   # Send email in development mode?
   config.action_mailer.perform_deliveries = true #use preview...
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: '127.0.0.1' }
+  config.action_mailer.default_url_options = { host: 'blog.dev' }
   config.action_mailer.smtp_settings = {
     address:              '127.0.0.1',
     port:                 1025,
