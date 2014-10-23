@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :detect_browser_os_and_device
-  before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :authenticate_user!, only: [:ping]
 
   rescue_from CanCan::AccessDenied do |exception|
     render(file: File.join(Rails.root, 'public/403.html'), status: :forbidden, layout: false)
@@ -11,10 +12,10 @@ class ApplicationController < ActionController::Base
 
   def ping
     filtered = request.env.select do |k,v| ['HTTP_USER_AGENT','REMOTE_ADDR'].include? k end
-      render json: filtered
-    end
+    render json: filtered
+  end
 
-    protected
+  protected
 
     def configure_permitted_parameters
       devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation) }
@@ -22,8 +23,8 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :email, :password, :password_confirmation, :current_password) }
     end
 
-    private
-    
+  private
+  
     def detect_browser_os_and_device
       case request.protocol
       when /http/i
