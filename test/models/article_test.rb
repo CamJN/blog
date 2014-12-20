@@ -97,7 +97,7 @@ class ArticleTest < ActiveSupport::TestCase
     notext.title = 'acceptable'
     notext.text = ''
     notext.valid?
-    assert_includes notext.errors.messages[:text], "is too short (minimum is 1 characters)"
+    assert_includes notext.errors.messages[:text], "is too short (minimum is 1 character)"
   end
 
   test "article with acceptable text should validate" do
