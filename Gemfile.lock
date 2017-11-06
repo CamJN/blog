@@ -101,6 +101,9 @@ GEM
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
+    passenger (5.1.11)
+      rack
+      rake (>= 0.8.1)
     pg (0.20.0)
     possessive (1.0.1)
     rack (2.0.3)
@@ -194,6 +197,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   json (>= 2.0)
+  passenger
   pg
   possessive
   rails
@@ -207,4 +211,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.14.6
+   1.15.4

@@ -26,6 +26,7 @@ group :production do
   # Use Uglifier as compressor for JavaScript assets
   gem 'autoprefixer-rails'
   gem 'uglifier'
+  gem 'passenger'
 end
 
 # Use CoffeeScript for .js.coffee assets and views, (required for Turbolinks)
